@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 greetings() {
 	echo "Please Enter Your Name: "
@@ -13,4 +13,17 @@ greetings() {
 	fi
 }
 
-greetings
+# greetings
+
+colors() {
+	echo -e "Please Enter the colors you like: "
+	read -a COLORS
+	ELEMENTS = ${#COLORS[@]}
+	
+	echo "You inserted $ELEMENTS colors"
+	echo "My favorite colors are also - "
+	for color in "${COLORS[@]}"; do
+		echo "$color"
+	done
+}
+colors
