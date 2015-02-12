@@ -5,23 +5,20 @@
 # size and number of sub directories and name of if it's a folder
 
 TMP_FILE="/tmp/proc_with_longest_name.tmp"
-DIR_TO_SEARCH="~/"
+DIR_TO_SEARCH="/home/foysal"
 
-ls -l ~/ > $TMP_FILE
-COUNTER=0
-
-FILES=$(awk 'NR!=1{print $9}' $TMP_FILE)  
-
-for filename in $FILES; do
-	if [ -d $DIR_TO_SEARCH$filename ] 
+for file in $@; do
+	if [ -d $DIR_TO_SEARCH/$file ]
 	then
-		echo "name:$filename | subdirs:" find $DIR_TO_SEARCH$filename -maxdepth 1 -type d | wc -l
+		echo "name: $DIR_TO_SEARCH/$file | subdirs: " $(find $DIR_TO_SEARCH/$file -maxdepth 1 -type d | wc -l)
 	fi
 
-	if [ -f $DIR_TO_SEARCH$filename ] 
-	then
-		echo "name:$filename | size: " du -h $DIR_TO_SEARCH$filename | cut " " -f1
+	if [ -f $DIR_TO_SEARCH/$file ]
+		then
+		ls -l $DIR_TO_SEARCH/$file | awk '
+		{
+			printf "name: %-s | permission: %-9s\n", "'$DIR_TO_SEARCH/$file'", $1
+		}
+		'
 	fi
 done
-
-rm $TMP_FILE
