@@ -1,0 +1,9 @@
+adsf	qwer	zxcv
+poux	xcvc	ewrt
+xcvb	qwer	asdf
+wqer	22	cvbx
+xzcv	10	cvbn
+xzcv	26	cvbn
+Czcv	15	cvbn
+xzcv:26:cvbn
+Czcv:15:cvbn
