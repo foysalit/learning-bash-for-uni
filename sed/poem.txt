@@ -2,3 +2,5 @@ roses are red
 violets are blue
 test test
 test goes the foo
+then bar does FoO
+and baz goes bazzzz
