@@ -19,3 +19,17 @@ BEGIN{
 	}
 }' | sort -nrk1 | sed '1!d'
 ```
+
+#### adding a condition before the operation block will ensure that the operation only runs for lines where the conditions are met
+
+#### ~ character is used to build string match condition
+
+```bash
+#!/bin/bash
+
+# print the process name and user only when the process name contains /usr/
+ps aux | awk '($11 ~ /\/usr\// && NR>1) {printf "%-10s %-100s\n", $1, $11}'
+
+# print the process name only for user defined by argument
+ps aux | awk '($1=="'"$1"'") {print $11}'
+``` 
