@@ -30,6 +30,11 @@ Line numbers and pattern matcher can be mixed to specify a range
 
 #### $ sign represents the last line
 The following will remove all lines from 3 to the last line
+
+`cat poem.txt | sed '3,$ d'`
+
+#### = sign outputs the number of the current line
+The following will operate only on last line and output the number of that line
 `cat poem.txt | sed '3,$ d'`
 
 ### -i option will persist the sed operations on file
