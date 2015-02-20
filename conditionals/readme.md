@@ -30,3 +30,16 @@ fi
 
 #### Arithmetic Comparators
 -lt (<),  -gt (>), -le (<=), -ge (>=), -eq (==), -ne (!=) 
+
+#### File operators in conditions
+`-e file exists`
+
+`-a file exists`
+
+This is identical in effect to -e. It has been "deprecated," [1] and its use is discouraged.
+
+`-f file is a regular file (not a directory or device file)`
+
+`-s file is not zero size`
+
+`-d file is a directory`
