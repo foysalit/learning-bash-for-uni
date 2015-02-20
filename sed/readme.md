@@ -28,4 +28,11 @@ Line numbers and pattern matcher can be mixed to specify a range
 
 `cat poem.txt | sed '2,/goes/ s/foo/BAR/gi'`
 
+#### $ sign represents the last line
+The following will remove all lines from 3 to the last line
+`cat poem.txt | sed '3,$ d'`
+
 ### -i option will persist the sed operations on file
+
+#### the substitution operator format can be changed into _, | etc. instead of /
+`cat poem.txt | sed '2, 4 s_test_Test_g'`

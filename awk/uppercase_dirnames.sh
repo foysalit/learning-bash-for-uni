@@ -10,7 +10,7 @@ for dir in $SUBDIRS; do
 	if [ $COUNTER -gt 1 ]
 	then
 		echo "before $dir"
-		echo "after $(echo "$dir" | sed 's/\.\/.*/\.\/\u$/\1/')"
+		echo "after $(echo "$dir" | sed 's/\.\/\(.*\)/\.\/\u\1/g')"
 	fi
 	
 	COUNTER=$((COUNTER+1))
