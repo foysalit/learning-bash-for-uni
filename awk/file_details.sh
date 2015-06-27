@@ -14,7 +14,7 @@ for file in $@; do
 	fi
 
 	if [ -f $DIR_TO_SEARCH/$file ]
-		then
+	then
 		ls -l $DIR_TO_SEARCH/$file | awk '
 		{
 			printf "name: %-s | permission: %-9s\n", "'$DIR_TO_SEARCH/$file'", $1

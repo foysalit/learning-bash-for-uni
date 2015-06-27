@@ -18,7 +18,7 @@ greetings() {
 colors() {
 	echo -e "Please Enter the colors you like: "
 	read -a COLORS
-	ELEMENTS = ${#COLORS[@]}
+	ELEMENTS=${#COLORS[@]}
 	
 	echo "You inserted $ELEMENTS colors"
 	echo "My favorite colors are also - "
@@ -27,3 +27,4 @@ colors() {
 	done
 }
 colors
+greetings
